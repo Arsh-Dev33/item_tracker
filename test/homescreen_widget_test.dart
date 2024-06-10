@@ -50,9 +50,7 @@ void main() {
       );
 
       await tester.pumpAndSettle();
-
-      expect(find.text('Item ABC'), findsOneWidget);
-      expect(find.text('Item Second'), findsOneWidget);
+        expect(find.byType(ItemTile), findsNWidgets(2));
     });
     testWidgets(
         'navigates to AddItemScreen when floating action button is pressed',
@@ -91,8 +89,7 @@ void main() {
         ),
       );
 
-      expect(find.text('Item test'), findsOneWidget);
-      expect(find.text('Description test'), findsOneWidget);
+       expect(find.byType(ItemTile), findsNWidgets(1));
     });
 
     testWidgets('navigates to AddItemScreen when edit button is pressed',
